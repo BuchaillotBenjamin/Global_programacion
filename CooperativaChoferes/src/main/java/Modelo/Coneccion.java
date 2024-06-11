@@ -16,7 +16,7 @@ public class Coneccion {
          try {
             Statement statement = conexion.createStatement();
 
-            // Crear la tabla choferes
+            // Crear la tabla socios
             String crearTablaChoferes = "CREATE TABLE IF NOT EXISTS socios ("
                     + "idSocio INT AUTO_INCREMENT PRIMARY KEY, "
                     + "idColectivoMasFrecuente INT, "
@@ -26,7 +26,7 @@ public class Coneccion {
                     + ")";
             statement.executeUpdate(crearTablaChoferes);
 
-            // Crear la tabla micros
+            // Crear la tabla colectivos
             String crearTablaMicros = "CREATE TABLE IF NOT EXISTS colectivos ("
                     + "idColectivo INT AUTO_INCREMENT PRIMARY KEY, "
                     + "idSocioMasFrecuente INT, "
@@ -47,19 +47,19 @@ public class Coneccion {
                     + ")";
             statement.executeUpdate(crearTablaViajes);
 
-            // Insertar datos en choferes
+            // Insertar datos en socios
             String insertarChoferes = "INSERT INTO socios (idColectivoMasFrecuente, nombre, dni, legajo) VALUES "
                     + "(NULL, 'Juan Pérez', 35345678, '13579'), "
                     + "(NULL, 'María López', 37654321, '24680')";
             statement.executeUpdate(insertarChoferes);
 
-            // Insertar datos en micros
+            // Insertar datos en colectivos
             String insertarMicros = "INSERT INTO colectivos (idSocioMasFrecuente, capacidad, patente, modelo, kilometraje) VALUES "
                     + "((SELECT idSocio FROM socios WHERE nombre = 'Juan Pérez'), 50, 'ABC123', 'Mercedes-Benz Sprinter', 0), "
                     + "((SELECT idSocio FROM socios WHERE nombre = 'María López'), 45, 'DEF456', 'Iveco Daily', 0)";
             statement.executeUpdate(insertarMicros);
 
-            // Asigna los micros a sus choferes
+            // Asigna los colectivos a sus choferes
             String actualizarChoferes = "UPDATE socios SET idColectivoMasFrecuente = (SELECT idColectivo FROM colectivos WHERE patente = 'ABC123') WHERE nombre = 'Juan Pérez'; "
                     + "UPDATE socios SET idColectivoMasFrecuente = (SELECT idColectivo FROM colectivos WHERE patente = 'DEF456') WHERE nombre = 'María López'";
             statement.executeUpdate(actualizarChoferes);
