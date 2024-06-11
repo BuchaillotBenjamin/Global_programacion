@@ -1,19 +1,19 @@
 
 package Modelo;
 
-public class Micro {
+public class Colectivo {
     //VARIABLES
     private int idMicro;
-    private Chofer chofer;
+    private Socio chofer;
     private int capacidad;
     private String patente;
     private String modelo;
     private double kilometraje;
     
     //CONSTRUCTORES
-    public Micro() {
+    public Colectivo() {
     }
-    public Micro(int idMicro, Chofer chofer, int capacidad, String patente, String modelo, double kilometraje) {
+    public Colectivo(int idMicro, Socio chofer, int capacidad, String patente, String modelo, double kilometraje) {
         this.idMicro = idMicro;
         this.chofer = chofer;
         this.capacidad = capacidad;
@@ -31,11 +31,11 @@ public class Micro {
         this.idMicro = idMicro;
     }
 
-    public Chofer getChofer() {
+    public Socio getChofer() {
         return chofer;
     }
 
-    public void setChofer(Chofer chofer) {
+    public void setChofer(Socio chofer) {
         this.chofer = chofer;
     }
 

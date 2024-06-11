@@ -1,23 +1,25 @@
 
 package Modelo;
 
-public class Chofer {
+import java.util.ArrayList;
+
+public class Socio {
     //VARIABLES
     private int id;
     private String nombre;
-    private Micro micro;
+    private ArrayList<Colectivo> conduce;
     private int dni;
-    private String licencia;
+    private int legajo;
     
     //CONSTRUCTORES
-    public Chofer() {
+    public Socio() {
     }
-    public Chofer(int id, String nombre, Micro micro, int dni, String licencia) {
+    public Socio(int id, String nombre,ArrayList<Colectivo> conduce, int dni, int legajo) {
         this.id = id;
         this.nombre = nombre;
-        this.micro = micro;
+        this.conduce=conduce;
         this.dni = dni;
-        this.licencia = licencia;
+        this.legajo = legajo;
     }
     
     //GET Y SET
@@ -37,12 +39,12 @@ public class Chofer {
         this.nombre = nombre;
     }
 
-    public Micro getMicro() {
-        return micro;
+    public ArrayList<Colectivo> getConduce() {
+        return conduce;
     }
 
-    public void setMicro(Micro micro) {
-        this.micro = micro;
+    public void setConduce(ArrayList<Colectivo> conduce) {
+        this.conduce = conduce;
     }
 
     public int getDni() {
@@ -53,12 +55,12 @@ public class Chofer {
         this.dni = dni;
     }
 
-    public String getLicencia() {
-        return licencia;
+    public int getLegajo() {
+        return legajo;
     }
 
-    public void setLicencia(String licencia) {
-        this.licencia = licencia;
+    public void setLegajo(int legajo) {
+        this.legajo = legajo;
     }
 
     //METODOS

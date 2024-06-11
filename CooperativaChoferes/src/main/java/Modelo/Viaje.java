@@ -3,15 +3,15 @@ package Modelo;
 
 public class Viaje {
 //VARIABLES
-private Chofer chofer;
-private Micro micro;
+private Socio chofer;
+private Colectivo micro;
 private double KilometrosRecorridos;
 private int pasajeros;
 
 //CONSTRUCTORES
     public Viaje() {
     }
-    public Viaje(Chofer chofer, Micro micro, double KilometrosRecorridos, int pasajeros) {
+    public Viaje(Socio chofer, Colectivo micro, double KilometrosRecorridos, int pasajeros) {
         this.chofer = chofer;
         this.micro = micro;
         this.KilometrosRecorridos = KilometrosRecorridos;
@@ -19,19 +19,19 @@ private int pasajeros;
     }
     
     //GET Y SET
-     public Chofer getChofer() {
+     public Socio getChofer() {
         return chofer;
     }
 
-    public void setChofer(Chofer chofer) {
+    public void setChofer(Socio chofer) {
         this.chofer = chofer;
     }
 
-    public Micro getMicro() {
+    public Colectivo getMicro() {
         return micro;
     }
 
-    public void setMicro(Micro micro) {
+    public void setMicro(Colectivo micro) {
         this.micro = micro;
     }
 
