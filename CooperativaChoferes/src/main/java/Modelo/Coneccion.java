@@ -7,13 +7,13 @@ import java.sql.Statement;
 
 public class Coneccion {
     
-    private static final String URL = "jdbc:h2:C:\\Users\\Usuario\\Desktop\\h2/test1.mv.db";
-    private static final String USUARIO = "salas";
-    private static final String CONTRASEÑA = "123456789";
-    private static final String jdbc = "org.h2.Driver";
+    public static final String URL = "jdbc:h2:C:\\Users\\Usuario\\Desktop\\h2/test1.mv.db";
+    public static final String USUARIO = "salas";
+    public static final String CONTRASEÑA = "123456789";
+    public static final String jdbc = "org.h2.Driver";
      
-    public void crearBaseDatos(Connection conexion){
-         try {
+    public static void  crearBaseDatos(Connection conexion){
+        try {
             Statement statement = conexion.createStatement();
 
             // Crear la tabla socios
